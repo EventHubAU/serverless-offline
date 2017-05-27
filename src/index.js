@@ -114,7 +114,9 @@ class Offline {
     };
 
     this.hooks = {
+      'before:offline:start:init': () => Promise.bind(this),
       'offline:start:init': this.start.bind(this),
+      'before:offline:start': () => Promise.bind(this),
       'offline:start': this.start.bind(this),
       'offline:start:end': this.end.bind(this),
     };
